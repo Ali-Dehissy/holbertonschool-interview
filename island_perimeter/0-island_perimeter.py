@@ -2,7 +2,7 @@
 
 """A function to find the perimiter of an island """
 
-def island_perimeter(grid):
+  def island_perimeter(grid):
     """
     Input: List of Lists
     Returns: The perimeter of the island
