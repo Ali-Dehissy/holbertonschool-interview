@@ -20,6 +20,6 @@ def island_perimeter(grid):
 
             if grid[i][x]:
                 counter += sum([1 if not r or not grid[k[0]][k[1]] else 0
-                              for r, k in zip(check, idx)])
+                                for r, k in zip(check, idx)])
 
     return (counter)
