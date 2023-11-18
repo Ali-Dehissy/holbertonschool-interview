@@ -21,7 +21,7 @@ void menger(int level)
 		{
 			for (axisY = 0; axisY < dim; axisY++)
 			{
-				for (j = dim / 3; j > 0; d /= 3)
+				for (j = dim / 3; j > 0; j /= 3)
 				{
 					if ((axisX % (j * 3)) / j == 1 && (axisY % (j * 3)) / j == 1)
 						break;
