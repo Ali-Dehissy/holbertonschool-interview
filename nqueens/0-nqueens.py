@@ -20,7 +20,7 @@ def print_board(board):
 
 
 def isSafe(board, row, col, number):
-    """ isSafe """    
+    """ isSafe """
     # Checks this row in the left side
     for i in range(col):
         if board[row][i] == 1:
