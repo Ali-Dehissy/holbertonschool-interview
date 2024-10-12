@@ -1,26 +1,27 @@
 #!/usr/bin/python3
-
-"""A function to find the perimiter of an island """
+"""
+Perimetre
+"""
 
 
 def island_perimeter(grid):
     """
-    Input: List of Lists
-    Returns: The perimeter of the island
+    Grid on ints
     """
-    counter = 0
-    row = len(grid)
-    col = len(grid[0]) if row else 0
+    if not grid or not grid[0]:
+        return 0
 
-    for i in range(len(grid)):
-        for x in range(len(grid[i])):
+    rows, cols = len(grid), len(grid[0])
+    perimeter = 0
 
-            idx = [(i - 1, x), (i, x - 1), (i, x + 1), (i + 1, x)]
-            check = [1 if k[0] in range(row) and k[1] in range(col) else 0
-                     for k in idx]
+    for i in range(rows):
+        for x in range(cols):
+            if grid[i][x] == 1:
+                perimeter += 4
 
-            if grid[i][x]:
-                counter += sum([1 if not r or not grid[k[0]][k[1]] else 0
-                                for r, k in zip(check, idx)])
+                if i > 0 and grid[i - 1][x] == 1:
+                    perimeter -= 2
+                if x > 0 and grid[i][x - 1] == 1:
+                    perimeter -= 2
 
-    return (counter)
+    return perimeter
